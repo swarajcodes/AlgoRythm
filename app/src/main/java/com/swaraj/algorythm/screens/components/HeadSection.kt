@@ -51,7 +51,7 @@ fun HeadSection (
                 Text(
                     text = algoName,
                     style = MaterialTheme.typography.headlineLarge,
-                    color = Color.Black,
+                    color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 24.sp
                 )
 

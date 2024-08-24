@@ -190,6 +190,22 @@ fun BottomWindow(
                 Text("Code")
             }
         }
+        if (showSnackbar) {
+            Snackbar(
+                modifier = Modifier.padding(16.dp),
+                action = {
+                    TextButton(onClick = { showSnackbar = false }) {
+                        Text("Dismiss")
+                    }
+                }
+            ) {
+                Text("Code copied to clipboard")
+            }
+            LaunchedEffect(showSnackbar) {
+                kotlinx.coroutines.delay(3000)
+                showSnackbar = false
+            }
+        }
         Box(modifier = Modifier.fillMaxSize()) {
             when (selectedTabIndex.value) {
                 0 -> description()
@@ -213,22 +229,6 @@ fun BottomWindow(
                     }
                 }
             }
-        }
-    }
-    if (showSnackbar) {
-        Snackbar(
-            modifier = Modifier.padding(16.dp),
-            action = {
-                TextButton(onClick = { showSnackbar = false }) {
-                    Text("Dismiss")
-                }
-            }
-        ) {
-            Text("Code copied to clipboard")
-        }
-        LaunchedEffect(showSnackbar) {
-            kotlinx.coroutines.delay(3000)
-            showSnackbar = false
         }
     }
 }

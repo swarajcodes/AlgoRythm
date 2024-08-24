@@ -66,7 +66,7 @@ fun BottomBar(
                         id = R.drawable.ic_pause
                     ),
                     contentDescription = null,
-                    tint = Color.White,
+                    tint = MaterialTheme.colorScheme.onSurface,
                 )
             }
 
